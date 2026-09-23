@@ -1,0 +1,270 @@
+/* ==========================================================================
+   Car Damage Assessment AI - Modern Portfolio Design System
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap');
+
+/* Typography */
+body, p, span, div, h1, h2, h3, h4, h5, h6,
+.stMarkdown, .stButton, .stCaption, .stMetric, .stSelectbox, .stTextInput {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Preserve Streamlit Internal Icon Fonts */
+[data-testid="stIcon"], 
+[class*="st-emotion-cache"] i, 
+.material-symbols-outlined {
+    font-family: inherit !important;
+}
+
+/* Hide Streamlit Top Bar */
+header[data-testid="stHeader"] {
+    background: transparent !important;
+}
+
+/* App Background */
+.stApp {
+    background-color: #0b0f19;
+}
+
+/* Hero Header Card */
+.hero-header-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.hero-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    color: #4ade80;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero-status-pill::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #4ade80;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #4ade80;
+}
+
+.hero-main-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.02em;
+}
+
+.hero-main-sub {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    margin: 0 0 14px 0;
+}
+
+.hero-tag-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.hero-tag-pill {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    color: #38bdf8;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+/* KPI Summary Cards Grid */
+.kpi-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.kpi-card-item {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 14px 18px;
+}
+
+.kpi-card-lbl {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.kpi-card-val {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.kpi-card-sub {
+    font-size: 0.75rem;
+    color: #38bdf8;
+    margin-top: 2px;
+}
+
+/* Waiting Prompt Box */
+.waiting-prompt-card {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px dashed rgba(56, 189, 248, 0.4);
+    border-radius: 14px;
+    padding: 36px 24px;
+    text-align: center;
+    color: #94a3b8;
+}
+
+.waiting-prompt-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 8px;
+}
+
+/* Damage Result Item Cards */
+.damage-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+    margin: 14px 0;
+}
+
+.damage-card-box {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(185, 28, 28, 0.25) 100%);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.damage-card-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.damage-card-prob {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fca5a5;
+}
+
+/* Automated Extent Badge */
+.extent-badge-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 10px 0 16px 0;
+}
+
+.extent-badge-severe {
+    background: rgba(239, 68, 68, 0.18);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #fca5a5;
+}
+
+.extent-badge-moderate {
+    background: rgba(234, 179, 8, 0.18);
+    border: 1px solid rgba(234, 179, 8, 0.5);
+    color: #fde047;
+}
+
+.extent-badge-minor {
+    background: rgba(34, 197, 94, 0.18);
+    border: 1px solid rgba(34, 197, 94, 0.5);
+    color: #86efac;
+}
+
+/* Repair Cost Banner & Items */
+.cost-summary-banner {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, rgba(3, 105, 161, 0.3) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.cost-summary-lbl {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7dd3fc;
+    margin-bottom: 6px;
+}
+
+.cost-summary-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.cost-breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+}
+
+.cost-breakdown-name {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+.cost-breakdown-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+/* Footer Box */
+.footer-info-box {
+    text-align: center;
+    padding: 24px 0;
+    margin-top: 36px;
+    border-top: 1px solid #1e293b;
+    color: #64748b;
+    font-size: 0.82rem;
+}
