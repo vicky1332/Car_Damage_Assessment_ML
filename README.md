@@ -285,7 +285,7 @@ streamlit run app.py
 The application will be available at:
 
 ```text
-h
+https://cardamageassessmentml-mibdkyqpxcihxmd6uterj5.streamlit.app/
 ```
 
 ## Deployment
